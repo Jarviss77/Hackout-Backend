@@ -7,6 +7,8 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
+import productRoutes from './routes/product.route.js';
+// import dasboardRoutes from './routes/dashboard.route.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +25,10 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(morgan(':method :url :status :response-time ms'));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+
+//Routes
+
+app.use("/product", productRoutes);
 
 //Mongoose Setup
 

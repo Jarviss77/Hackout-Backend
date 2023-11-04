@@ -3,10 +3,6 @@ import {model, Schema} from "mongoose";
 
 const userSchema = new Schema(
     {
-        _id:{
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-        },
         FirstName: {
         type: String,
         required: true,
@@ -28,6 +24,11 @@ const userSchema = new Schema(
         PhoneNumber: {
             type:Number,
             required: true,
+        },
+        SellingProducts: {
+            type: Array,
+            default: [],
+            ref: 'Product',
         },
         location: String,
     },

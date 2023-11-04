@@ -23,9 +23,17 @@ const productSchema = new Schema(
             type: String,
             required: true,
         },
+        PicturePath:{
+            type: String,
+            default: "",
+        },
         PostedBy:{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
+        },
+        Sold:{
+            type: Boolean,
+            default: false,
         },
     });
 

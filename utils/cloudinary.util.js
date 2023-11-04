@@ -9,7 +9,7 @@ cloudinary.config({
 const UploadImage = async (file) => {
     try {
         const res = await cloudinary.v2.uploader.upload(file, {
-            folder: "Olx",
+            folder: "ProductImages",
             width: 400,
             crop: "scale",
         });
