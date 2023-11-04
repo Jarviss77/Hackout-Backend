@@ -1,6 +1,6 @@
 import Product from "../models/product.model.js";
 import Service from "../models/service.model.js";
-const ProductDashboard = async (req, res) => {
+export const ProductDashboard = async (req, res) => {
     try{
         const {id} = req.params;
         const product = await Product.findById(id);
@@ -11,7 +11,7 @@ const ProductDashboard = async (req, res) => {
     }
 }
 
-const ServiceDashboard = async (req, res) => {
+export const ServiceDashboard = async (req, res) => {
     try{
         const {id} = req.params;
         const service = await Service.findById(id);
@@ -22,5 +22,4 @@ const ServiceDashboard = async (req, res) => {
     }
 }
 
-export default ProductDashboard;
-export default ServiceDashboard;
+export default {ProductDashboard, ServiceDashboard};

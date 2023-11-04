@@ -1,6 +1,6 @@
 import UploadImage from '../utils/cloudinary.util.js';
 
-const uploadimage = async (req, res, next) => {
+export const uploadimage = async (req, res, next) => {
     try {
         const secureUrl = await UploadImage(req.file.path);
         req.body.PicturePath = secureUrl;

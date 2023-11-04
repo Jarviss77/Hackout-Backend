@@ -8,7 +8,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
 import productRoutes from './routes/product.route.js';
-// import dasboardRoutes from './routes/dashboard.route.js';
+import serviceRoutes from './routes/service.route.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,14 +29,13 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 //Routes
 
 app.use("/product", productRoutes);
+app.use("/service", serviceRoutes);
 
 //Mongoose Setup
 
 const PORT = process.env.PORT || 4000;
 
 mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
 }).then(() => {
     app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
 

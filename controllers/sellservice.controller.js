@@ -1,6 +1,6 @@
 import Service from '../models/service.model.js';
 
-const SellService= async(req, res )=>{
+export const SellService= async(req, res )=>{
     try{
         const{Name, Description, Price, Category, PostedBy} = req.body;
 

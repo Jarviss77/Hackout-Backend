@@ -1,4 +1,4 @@
-const cloudinary = require('cloudinary').v2;
+import { v2 as cloudinary } from 'cloudinary'
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -6,7 +6,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_SECRET,
 });
 
-const UploadImage = async (file) => {
+export const UploadImage = async (file) => {
     try {
         const res = await cloudinary.v2.uploader.upload(file, {
             folder: "ProductImages",
@@ -21,5 +21,5 @@ const UploadImage = async (file) => {
     }
 }
 
-module.exports = cloudinary;
-module.exports = UploadImage;
+export default {cloudinary, UploadImage}
+
