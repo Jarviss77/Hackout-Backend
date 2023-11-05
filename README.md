@@ -73,3 +73,6 @@ npm start
 ## Live Deployment 
 
 - The backend of this project is deployed on Render.com and can be accessed using the following (Link to be added soon)
+
+## Note
+- This project is still in its BETA phase, Socket will be implemented properly soon
