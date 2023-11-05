@@ -23,7 +23,9 @@
     "redis": "^4.6.10",
     "socket-auth": "^0.0.6",
     "socket-redis": "^3.3.0",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.7.2",
+    "socket.io-redis": "^6.1.1",
+    "socketio-auth": "^0.1.1"
   },
   "devDependencies": {
     "prisma": "^5.5.2"

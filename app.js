@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 import http from 'http';
 import productRoutes from './routes/product.route.js';
 import serviceRoutes from './routes/service.route.js';
-import { Server } from "socket.io";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,11 +42,11 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log(err.message);
 });
 
-const server = app.listen(4000, () => console.log(`Web socket server is running on port: 4000`))
-
-const io = new Server(server);
-
-io.on("connection", (socket) => {
-    console.log("connected");
-});
+// const server = app.listen(4000, () => console.log(`Web socket server is running on port: 4000`))
+//
+// const io = new Server(server);
+//
+// io.on("connection", (socket) => {
+//     console.log("connected");
+// });
 
