@@ -22,4 +22,3 @@ export const UploadImage = async (file) => {
 }
 
 export default {cloudinary, UploadImage}
-
